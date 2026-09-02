@@ -1,17 +1,15 @@
-// Last updated: 9/2/2026, 2:09:26 PM
-1import java.util.Arrays;
+// Last updated: 9/2/2026, 2:10:16 PM
+1import java.util.HashSet;
 2
 3class Solution {
-4    public int arrayPairSum(int[] nums) {
+4    public int distributeCandies(int[] candyType) {
 5
-6        Arrays.sort(nums);
+6        HashSet<Integer> set = new HashSet<>();
 7
-8        int sum = 0;
-9
-10        for (int i = 0; i < nums.length; i += 2) {
-11            sum += nums[i];
-12        }
-13
-14        return sum;
-15    }
-16}
+8        for (int candy : candyType) {
+9            set.add(candy);
+10        }
+11
+12        return Math.min(set.size(), candyType.length / 2);
+13    }
+14}
